@@ -6,17 +6,20 @@ This project forecasts temperature using historical weather data with an Long Sh
 **Technical Overview**
 
 Model Type: Sequential LSTM Neural Network
+
 Objective: Predict future temperature trends
+
 Frameworks: TensorFlow / Keras
+
 Dataset: weather_data.csv containing multiple weather parameters
 
 **Libraries Used**
 
-NumPy
-Pandas
-Scikit-learn
-TensorFlow / Keras
-Matplotlib
+* NumPy
+* Pandas
+* Scikit-learn
+* TensorFlow / Keras
+* Matplotlib
 
 **Approach**
 
