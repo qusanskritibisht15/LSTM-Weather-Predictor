@@ -9,8 +9,7 @@ import tensorflow as tf
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import LSTM, Dense, Dropout
 
-# Step 1: Load and preprocess the data
-# Replace 'weather_data.csv' with your dataset path
+
 data = pd.read_csv('weather_data.csv')
 
 # Visualize the data
@@ -21,7 +20,7 @@ plt.ylabel("Temperature")
 plt.legend()
 plt.show()
 
-# Normalize the data (use all columns as features)
+# Normalize the data 
 scaler = MinMaxScaler(feature_range=(0, 1))
 scaled_data = scaler.fit_transform(data[['Temperature', 'Humidity', 'Wind Speed', 'Pressure']])
 
@@ -77,11 +76,12 @@ plt.legend()
 plt.show()
 
 # Step 6: Forecast future values
-# Use the last available data for forecasting
+# Using available data for forecasting
 last_sequence = scaled_data[-sequence_length:]
 last_sequence = last_sequence.reshape((1, sequence_length, last_sequence.shape[1]))
 forecasted_value = model.predict(last_sequence)
 forecasted_value = scaler.inverse_transform(np.hstack((forecasted_value, np.zeros((forecasted_value.shape[0], 3)))))
 
 print("Forecasted Temperature for the next time step:", forecasted_value[0][0])
+
 
