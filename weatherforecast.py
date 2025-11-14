@@ -1,9 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Sun Nov 17 16:44:33 2024
-
-@author: Jas
-"""
 
 import numpy as np
 import pandas as pd
@@ -89,3 +84,4 @@ forecasted_value = model.predict(last_sequence)
 forecasted_value = scaler.inverse_transform(np.hstack((forecasted_value, np.zeros((forecasted_value.shape[0], 3)))))
 
 print("Forecasted Temperature for the next time step:", forecasted_value[0][0])
+
